@@ -4,10 +4,10 @@ maintainer_email 'elijah.wright@gmail.com'
 license          'Apache-2.0'
 description      'Installs/Configures Prometheus'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.6.5'
+version          '0.7.0'
 source_url 'https://github.com/elijah/chef-prometheus'
 issues_url 'https://github.com/elijah/chef-prometheus/issues'
-chef_version '>= 12.15.25', '< 14' if respond_to?(:chef_version)
+chef_version '~> 15.0'
 
 %w(ubuntu debian centos redhat fedora).each do |os|
   supports os
@@ -22,4 +22,4 @@ depends 'golang'
 depends 'compat_resource'
 
 # this should really be a suggests
-depends 'bluepill', '~> 2.3'
+depends 'bluepill', '>= 2.3'
